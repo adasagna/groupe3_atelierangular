@@ -1,0 +1,47 @@
+<div class="container login p-5">
+    <div class="card login-card  shadow">
+        <div class="row g-0">
+          <div class="col-md-5">
+            <img src="https://diva.consulatogo.org/loginnew/assets/images/login.jpg" alt="" style="width: 100%;">
+          </div>
+          <div class="col-md-7">
+            <!-- Premiere formulaire  -->
+            <div class="card-body login-body p-5" *ngIf="choixFormulaire">
+                <h2 class="card-title"> <img src="../../assets/logo.PNG" alt=""></h2>
+                <h6>Sign into your account</h6>
+                <form action="">
+                    <input  type="email" class="form-control rounded-0 mb-3" name="email" id="emailInput" placeholder="Votre address email" [(ngModel)]="email">
+                    <input  type="password" name="password" class="form-control rounded-0 mb-3" id="passwodInput" placeholder="Votre mot de passe"  [(ngModel)]="password">                        
+                    <button class="btn btn-login mb-3 col-md-12" type="submit" (click) = "verifLogin($event)">Login</button>
+                    
+                    
+                    <div class="password-forgot mt-2">
+                        <p class="forgot"><a href="#">Forgot password ?</a></p>
+                        <p class="register" (click)="afficherFormulaire()"><a href="#">Don't have an account? Register here</a></p>
+                    </div>
+
+                    <div class="term-use mt-4">
+                        <a href="#">Terms of use Privacy policy </a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Deuxieme formulaire  -->
+            <div class="card-body login-body p-5" *ngIf="!choixFormulaire">
+                <h2 class="card-title"> <img src="../../assets/logo.PNG" alt=""></h2>
+                <form action="">
+                    <input  type="email" class="form-control rounded-0 mb-3" name="email" id="emailInput" placeholder="Votre address email" [(ngModel)]="email">
+                    <input  type="password" name="password" class="form-control rounded-0 mb-3" id="passwodInput" placeholder="Votre mot de passe"  [(ngModel)]="password">        
+                    
+                    <input type="password" class="form-control rounded-0 mb-3" id="passwodInput" name="passConfirme" placeholder="Confirmez votre mot de passe" [(ngModel)]="passwordConfirme">
+
+                    
+
+                    <button class="btn btn-login mb-3 col-md-12" type="submit" (click)="verifLoginForm2($event)">Login</button>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>
